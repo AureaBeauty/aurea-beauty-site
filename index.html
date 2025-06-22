@@ -91,5 +91,41 @@
 
     renderProducts();
   </script>
-</body>
+ <!-- 🔒 Admin Access Button -->
+<div style="text-align:center; margin: 30px;">
+  <button onclick="showAdminLogin()" style="padding:10px 20px; background:#ba8a52; color:white; border:none; border-radius:6px;">🔒 Вход для Админа</button>
+</div>
+
+<!-- 🔐 Admin Login Modal -->
+<div id="adminLogin" style="display:none; text-align:center; padding:20px;">
+  <input type="password" id="adminPassword" placeholder="Введите пароль" style="padding:10px; width:200px;" />
+  <button onclick="checkAdminAccess()" style="padding:10px; margin-left:10px;">Войти</button>
+  <p id="loginError" style="color:red;"></p>
+</div>
+
+<!-- 🛠️ Admin Panel (hidden by default) -->
+<div id="adminPanel" style="display:none; background:#fff0e6; padding:20px; border-radius:10px; margin: 30px;">
+  <h2>👑 Панель Администратора</h2>
+  <p>Здесь будет управление товарами, заказами и AI. 🔧</p>
+  <!-- можешь добавить кнопки позже -->
+</div>
+
+<script>
+  const adminSecret = "AUREA2025"; // 🛡️ Замени на свой секрет
+
+  function showAdminLogin() {
+    document.getElementById('adminLogin').style.display = 'block';
+  }
+
+  function checkAdminAccess() {
+    const entered = document.getElementById('adminPassword').value;
+    const error = document.getElementById('loginError');
+    if (entered === adminSecret) {
+      document.getElementById('adminPanel').style.display = 'block';
+      document.getElementById('adminLogin').style.display = 'none';
+    } else {
+      error.textContent = "❌ Неверный пароль";
+    }
+  }
+</script></body>
 </html>
