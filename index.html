@@ -1,11 +1,148 @@
-<!DOCTYPE html><html><head><title>Auréa Beauty</title></head><body><h1>Welcome to Auréa Beauty!</h1><!-- Окно загрузки чека --><div style="margin: 40px auto; text-align: center;">
-  <h3>Загрузите чек об оплате</h3>
-  <form id="receiptForm" enctype="multipart/form-data">
-    <input type="file" name="receipt" id="receipt" accept="image/*,application/pdf" required />
-    <br><br>
-    <input type="text" id="username" placeholder="Ваше имя или Telegram" required />
-    <br><br>
-    <button type="submit">Отправить чек</button>
-  </form>
-  <p id="receiptStatus"></p>
-</div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Auréa Beauty</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fff6f9;
+      color: #333;
+    }
+
+    header {
+      background-color: #ffc0cb;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 32px;
+    }
+
+    nav {
+      text-align: center;
+      margin: 10px 0;
+    }
+
+    nav select {
+      padding: 5px;
+    }
+
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .product {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ccc;
+      padding: 15px;
+      width: 200px;
+      text-align: center;
+    }
+
+    .product img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+
+    .upload {
+      text-align: center;
+      padding: 20px;
+    }
+
+    footer {
+      background-color: #ffc0cb;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Auréa Beauty</h1>
+    <nav>
+      <label for="language">🌐 Language:</label>
+      <select id="language" onchange="setLanguage(this.value)">
+        <option value="en">English</option>
+        <option value="ru">Русский</option>
+        <option value="kr">한국어</option>
+      </select>
+    </nav>
+  </header>
+
+  <section class="products" id="product-list">
+    <!-- Products will be loaded here dynamically -->
+  </section>
+
+  <section class="upload">
+    <h3 id="uploadTitle">Upload payment receipt</h3>
+    <input type="file" />
+    <p id="deliveryNote">Your order will be delivered within 12 business days</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Auréa Beauty</p>
+  </footer>
+
+  <script>
+    const translations = {
+      en: {
+        uploadTitle: "Upload payment receipt",
+        deliveryNote: "Your order will be delivered within 12 business days",
+      },
+      ru: {
+        uploadTitle: "Загрузите чек об оплате",
+        deliveryNote: "Ваш заказ будет доставлен в течение 12 рабочих дней",
+      },
+      kr: {
+        uploadTitle: "결제 영수증을 업로드하세요",
+        deliveryNote: "주문은 영업일 기준 12일 이내에 배송됩니다",
+      },
+    };
+
+    function setLanguage(lang) {
+      const t = translations[lang];
+      document.getElementById("uploadTitle").textContent = t.uploadTitle;
+      document.getElementById("deliveryNote").textContent = t.deliveryNote;
+    }
+
+    async function loadProducts() {
+      try {
+        const res = await fetch("products.json");
+        const data = await res.json();
+        const container = document.getElementById("product-list");
+        data.forEach((item) => {
+          const div = document.createElement("div");
+          div.className = "product";
+          div.innerHTML = `
+            <img src="${item.image}" alt="${item.name}" />
+            <h4>${item.name}</h4>
+            <p>${item.description}</p>
+            <strong>$${item.price}</strong>
+          `;
+          container.appendChild(div);
+        });
+      } catch (e) {
+        console.error("Failed to load products.json", e);
+      }
+    }
+
+    // Auto-load products
+    loadProducts();
+  </script>
+</body>
+</html>
