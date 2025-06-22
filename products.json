@@ -1,22 +1,42 @@
 [
   {
-    "name": "Missha Time Revolution Night Repair",
-    "price": "$35",
-    "image": "https://aurea-cdn.vercel.app/missha-time.jpg"
-  },
-  {
-    "name": "Innisfree Green Tea Foam Cleanser",
-    "price": "$12",
-    "image": "https://aurea-cdn.vercel.app/innisfree-foam.jpg"
-  },
-  {
-    "name": "Laneige Lip Sleeping Mask",
-    "price": "$19",
-    "image": "https://aurea-cdn.vercel.app/laneige-lip.jpg"
-  },
-  {
     "name": "COSRX Advanced Snail 96 Mucin Power Essence",
     "price": "$22",
-    "image": "https://aurea-cdn.vercel.app/cosrx-snail.jpg"
+    "image": "https://aurea-cdn.vercel.app/images/cosrx_snail_essence.jpg"
+  },
+  {
+    "name": "Laneige Lip Sleeping Mask (Berry)",
+    "price": "$20",
+    "image": "https://aurea-cdn.vercel.app/images/laneige_lip_mask.jpg"
+  },
+  {
+    "name": "Innisfree Green Tea Seed Serum",
+    "price": "$25",
+    "image": "https://aurea-cdn.vercel.app/images/innisfree_green_tea_serum.jpg"
+  },
+  {
+    "name": "Etude House SoonJung pH 5.5 Relief Toner",
+    "price": "$18",
+    "image": "https://aurea-cdn.vercel.app/images/etude_toner.jpg"
+  },
+  {
+    "name": "Missha Time Revolution Night Repair Ampoule",
+    "price": "$32",
+    "image": "https://aurea-cdn.vercel.app/images/missha_ampoule.jpg"
+  },
+  {
+    "name": "Beauty of Joseon Relief Sun: Rice + Probiotics SPF50",
+    "price": "$17",
+    "image": "https://aurea-cdn.vercel.app/images/beauty_of_joseon_sunscreen.jpg"
+  },
+  {
+    "name": "Sulwhasoo First Care Activating Serum",
+    "price": "$45",
+    "image": "https://aurea-cdn.vercel.app/images/sulwhasoo_serum.jpg"
+  },
+  {
+    "name": "Banila Co Clean It Zero Cleansing Balm",
+    "price": "$21",
+    "image": "https://aurea-cdn.vercel.app/images/banila_cleansing_balm.jpg"
   }
 ]
