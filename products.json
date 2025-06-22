@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Missha Time Revolution Night Repair",
+    "price": "$35",
+    "image": "https://aurea-cdn.vercel.app/missha-time.jpg"
+  },
+  {
+    "name": "Innisfree Green Tea Foam Cleanser",
+    "price": "$12",
+    "image": "https://aurea-cdn.vercel.app/innisfree-foam.jpg"
+  },
+  {
+    "name": "Laneige Lip Sleeping Mask",
+    "price": "$19",
+    "image": "https://aurea-cdn.vercel.app/laneige-lip.jpg"
+  },
+  {
+    "name": "COSRX Advanced Snail 96 Mucin Power Essence",
+    "price": "$22",
+    "image": "https://aurea-cdn.vercel.app/cosrx-snail.jpg"
+  }
+]
