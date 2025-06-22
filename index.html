@@ -2,163 +2,224 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <title>Auréa Beauty – Магазин косметики</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Auréa Beauty</title>
   <style>
     body {
+      font-family: "Segoe UI", sans-serif;
+      background-color: #fffaf5;
       margin: 0;
-      font-family: 'Arial', sans-serif;
-      background: #f9f9f9;
+      padding: 0;
     }
 
     header {
-      background: #ffffff;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      padding: 10px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     }
 
     header img {
-      height: 40px;
-    }
-
-    .cart-icon {
-      font-size: 24px;
-      cursor: pointer;
+      height: 60px;
     }
 
     h1 {
-      text-align: center;
-      margin: 20px 0;
-      color: #e91e63;
+      font-size: 28px;
+      color: #8c6b30;
     }
 
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-      gap: 16px;
+    main {
       padding: 20px;
     }
 
-    .product {
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .product-card {
       background: #fff;
-      border-radius: 8px;
-      padding: 12px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
-      text-align: center;
-      transition: transform 0.2s ease;
-    }
-
-    .product:hover {
-      transform: translateY(-3px);
-    }
-
-    .product img {
-      max-width: 100%;
-      border-radius: 6px;
-      margin-bottom: 10px;
-    }
-
-    .product .title {
-      font-size: 16px;
-      font-weight: bold;
-      margin-bottom: 5px;
-    }
-
-    .product .rating {
-      font-size: 14px;
-      color: #ffa500;
-      margin-bottom: 6px;
-    }
-
-    .product .price {
-      font-size: 15px;
-      font-weight: bold;
-      color: #333;
-      margin-bottom: 6px;
-    }
-
-    .product .old-price {
-      font-size: 13px;
-      color: #999;
-      text-decoration: line-through;
-      margin-left: 4px;
-    }
-
-    .product .btn {
-      display: inline-block;
-      background: #e91e63;
-      color: white;
-      padding: 8px 14px;
-      border-radius: 5px;
-      text-decoration: none;
-      font-size: 14px;
-      margin-top: 8px;
-    }
-
-    footer {
-      background: #eee;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
       padding: 15px;
       text-align: center;
-      font-size: 14px;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .product-card h3 {
+      margin: 10px 0 5px;
+      font-size: 16px;
+    }
+
+    .product-card p {
       color: #666;
-      margin-top: 30px;
+      margin: 0 0 10px;
+    }
+
+    .product-card .price {
+      color: #d14f4f;
+      font-weight: bold;
+    }
+
+    /* Admin panel */
+    .admin-panel {
+      margin-top: 40px;
+      padding: 20px;
+      background-color: #fff0e6;
+      border-radius: 10px;
+    }
+
+    .admin-panel input {
+      margin: 5px;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .admin-panel button {
+      padding: 10px 20px;
+      background-color: #8c6b30;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .admin-panel h2 {
+      color: #8c6b30;
+    }
+
+    /* Login screen */
+    #login-screen {
+      padding: 30px;
+      text-align: center;
+    }
+
+    #login-screen input {
+      padding: 10px;
+      margin: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    #login-screen button {
+      padding: 10px 20px;
+      background-color: #8c6b30;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <img src="logo.png" alt="Auréa Beauty">
-    <div class="cart-icon">🛍️</div>
-  </header> <header style="text-align: center; padding: 20px; background-color: #fff4e6;">
-  <img src="logo.png" alt="Auréa Beauty Logo" style="max-width: 200px; height: auto;">
-</header>
+    <img src="logo.png" alt="Auréa Beauty" />
+    <h1>Auréa Beauty</h1>
+  </header>
 
-  <h1>Лучшие товары Auréa Beauty</h1>
+  <main>
+    <section class="products" id="product-list">
+      <!-- Пример товара -->
+      <div class="product-card">
+        <img src="https://hollyshop.ru/upload/resize_cache/iblock/1b6/600_600_1/1b682ec4697b518ef9e0a23c3a268d6d.jpg" alt="Товар 1" />
+        <h3>Some By Mi - Тонер</h3>
+        <p>Успокаивающий тонер для чувствительной кожи</p>
+        <p class="price">₽1 590</p>
+      </div>
+    </section>
 
-  <div class="product-grid">
-    <div class="product">
-      <img src="https://via.placeholder.com/200x200?text=Lagom+Mask" alt="Маска Lagom">
-      <div class="title">Коллагеновая маска Lagom</div>
-      <div class="rating">★★★★☆ (4 отзыва)</div>
-      <div class="price">2 100₽ <span class="old-price">2 500₽</span></div>
-      <a href="#" class="btn">В корзину</a>
+    <!-- Админ панель -->
+    <div class="admin-panel">
+      <h2>Добавить товар (Admin)</h2>
+      <input type="text" id="title" placeholder="Название товара" />
+      <input type="text" id="desc" placeholder="Описание" />
+      <input type="text" id="price" placeholder="Цена (₽)" />
+      <input type="text" id="img" placeholder="Ссылка на картинку" />
+      <button onclick="addProduct()">Добавить</button>
     </div>
+  </main>
 
-    <div class="product">
-      <img src="https://via.placeholder.com/200x200?text=Some+By+Mi" alt="Some By Mi">
-      <div class="title">Тоник Some By Mi Miracle</div>
-      <div class="rating">★★★★★ (24 отзыва)</div>
-      <div class="price">2 590₽</div>
-      <a href="#" class="btn">В корзину</a>
-    </div>
-
-    <div class="product">
-      <img src="https://via.placeholder.com/200x200?text=Etude+House" alt="Etude House">
-      <div class="title">Etude House Пенка для умывания</div>
-      <div class="rating">★★★★☆ (12 отзывов)</div>
-      <div class="price">1 750₽</div>
-      <a href="#" class="btn">В корзину</a>
-    </div>
-
-    <div class="product">
-      <img src="https://via.placeholder.com/200x200?text=Mediheal" alt="Mediheal">
-      <div class="title">Mediheal Увлажняющая маска</div>
-      <div class="rating">★★★★★ (8 отзывов)</div>
-      <div class="price">1 300₽ <span class="old-price">1 500₽</span></div>
-      <a href="#" class="btn">В корзину</a>
-    </div>
+  <!-- Форма входа для администратора -->
+  <div id="login-screen">
+    <h2>Вход в админку</h2>
+    <input type="password" id="admin-password" placeholder="Введите пароль" />
+    <button onclick="login()">Войти</button>
+    <p id="login-error" style="color: red;"></p>
   </div>
 
-  <footer>
-    © 2025 Auréa Beauty. Все права защищены.
-  </footer>
+  <script>
+    const ADMIN_PASSWORD = "kfmadmin123";
+
+    function login() {
+      const password = document.getElementById("admin-password").value;
+      if (password === ADMIN_PASSWORD) {
+        document.getElementById("login-screen").style.display = "none";
+        document.querySelector(".admin-panel").style.display = "block";
+      } else {
+        document.getElementById("login-error").innerText = "Неверный пароль";
+      }
+    }
+
+    function addProduct() {
+      const title = document.getElementById("title").value;
+      const desc = document.getElementById("desc").value;
+      const price = document.getElementById("price").value;
+      const img = document.getElementById("img").value;
+
+      const productHTML = `
+        <div class="product-card">
+          <img src="${img}" alt="${title}" />
+          <h3>${title}</h3>
+          <p>${desc}</p>
+          <p class="price">₽${price}</p>
+        </div>
+      `;
+
+      document.getElementById("product-list").innerHTML += productHTML;
+
+      // Очистка формы
+      document.getElementById("title").value = '';
+      document.getElementById("desc").value = '';
+      document.getElementById("price").value = '';
+      document.getElementById("img").value = '';
+    }
+
+    // Скрываем админку до входа
+    window.onload = () => {
+      document.querySelector(".admin-panel").style.display = "none";
+
+      // Загружаем товары из файла
+      fetch("products.json")
+        .then(res => res.json())
+        .then(data => {
+          data.forEach(item => {
+            const html = `
+              <div class="product-card">
+                <img src="${item.img}" alt="${item.title}" />
+                <h3>${item.title}</h3>
+                <p>${item.desc}</p>
+                <p class="price">₽${item.price}</p>
+              </div>
+            `;
+            document.getElementById("product-list").innerHTML += html;
+          });
+        })
+        .catch(err => {
+          console.error("Ошибка загрузки товаров:", err);
+        });
+    };
+  </script>
 
 </body>
 </html>
