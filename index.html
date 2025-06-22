@@ -4,107 +4,123 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Auréa Beauty</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Open+Sans&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Open Sans', sans-serif;
-      background-color: #fff7f1;
+      font-family: Arial, sans-serif;
+      background: #fafafa;
       color: #333;
     }
-    header {
+    .header {
+      background: #ffffff;
+      padding: 20px;
       text-align: center;
-      padding: 40px 20px 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
-    header img {
-      width: 160px;
+    .logo-img {
+      max-height: 60px;
     }
-    h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
+    .brand-title {
       margin: 10px 0 0;
-      color: #a3793b;
+      font-size: 26px;
+      color: #ba8a52;
     }
-    .products {
+    .hero {
+      margin: 20px auto;
+      text-align: center;
+    }
+    .hero-image {
+      width: 90%;
+      max-width: 600px;
+      border-radius: 10px;
+    }
+    .product-list {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 20px;
       padding: 20px;
     }
     .product-card {
-      background: #ffffff;
+      background: #fff;
       border: 1px solid #eee;
-      border-radius: 10px;
-      width: 280px;
+      border-radius: 8px;
+      width: 220px;
+      margin: 10px;
+      box-shadow: 0 1px 5px rgba(0,0,0,0.1);
       padding: 15px;
       text-align: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      transition: transform 0.3s ease;
-    }
-    .product-card:hover {
-      transform: translateY(-5px);
     }
     .product-card img {
       width: 100%;
-      height: 240px;
-      object-fit: cover;
-      border-radius: 8px;
+      border-radius: 5px;
     }
-    .product-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.2rem;
+    .product-card h2 {
+      font-size: 18px;
       margin: 10px 0 5px;
-      color: #444;
     }
-    .product-description {
-      font-size: 0.9rem;
-      color: #777;
-      height: 40px;
+    .product-card p {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 10px;
     }
     .price {
+      font-size: 16px;
       font-weight: bold;
-      font-size: 1.1rem;
-      color: #a3793b;
-      margin-top: 8px;
+      color: #ba8a52;
     }
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
-      color: #999;
+    .btn-cart {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px;
+      width: 100%;
+      background: #ba8a52;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .btn-cart:hover {
+      background: #a97848;
     }
   </style>
 </head>
 <body>
-
-  <header>
-    <img src="logo.jpg" alt="Auréa Beauty" />
-    <h1>Auréa Beauty</h1>
+  <!-- Шапка сайта -->
+  <header class="header">
+    <img src="images/logo.png" alt="Auréa Beauty" class="logo-img" />
+    <h1 class="brand-title">Auréa Beauty</h1>
   </header>
 
-  <section class="products">
-    <div class="product-card">
-      <img src="https://i.imgur.com/BZ5YQ8N.jpg" alt="COSRX Essence" />
-      <div class="product-title">COSRX Advanced Snail 96 Mucin Power Essence</div>
-      <div class="product-description">Сила улиточной слизи для увлажнения и сияния кожи</div>
-      <div class="price">$22</div>
-    </div>
-    <div class="product-card">
-      <img src="https://i.imgur.com/tnKCrG9.jpg" alt="Laneige Lip Mask" />
-      <div class="product-title">Laneige Lip Sleeping Mask (Berry)</div>
-      <div class="product-description">Ночная маска для губ с ягодным ароматом</div>
-      <div class="price">$20</div>
-    </div>
-    <div class="product-card">
-      <img src="https://i.imgur.com/KvJq7eP.jpg" alt="Innisfree Serum" />
-      <div class="product-title">Innisfree Green Tea Seed Serum</div>
-      <div class="product-description">Глубокое увлажнение с зелёным чаем с острова Чеджу</div>
-      <div class="price">$24</div>
-    </div>
+  <!-- Баннер -->
+  <section class="hero">
+    <img src="images/hero.jpg" alt="Добро пожаловать в Auréa Beauty" class="hero-image"/>
   </section>
 
-  <footer>© 2025 Auréa Beauty</footer>
+  <!-- Товары -->
+  <main class="product-list">
+    <div class="product-card">
+      <img src="images/snail-essence.jpg" alt="COSRX Advanced Snail 96 Mucin Power Essence" />
+      <h2>COSRX Advanced Snail 96</h2>
+      <p>Сила улиточной слизи для увлажнения и сияния кожи</p>
+      <span class="price">₽2 190</span>
+      <button class="btn-cart">В корзину</button>
+    </div>
 
+    <div class="product-card">
+      <img src="images/laneige-lip-mask.jpg" alt="Laneige Lip Sleeping Mask Berry" />
+      <h2>Laneige Lip Sleeping Mask (Berry)</h2>
+      <p>Бальзам-маска для губ с ярким ягодным ароматом</p>
+      <span class="price">₽1 350</span>
+      <button class="btn-cart">В корзину</button>
+    </div>
+
+    <div class="product-card">
+      <img src="images/toner.jpg" alt="Laneige Cream Skin Toner" />
+      <h2>Laneige Cream Skin Toner</h2>
+      <p>Глубоко увлажняющий тонер-эмульсия с экстрактом овсянки</p>
+      <span class="price">₽1 290</span>
+      <button class="btn-cart">В корзину</button>
+    </div>
+  </main>
 </body>
 </html>
